@@ -3,6 +3,6 @@
 
 int main () {
     StageManager lilb;
-    lilb.mainLoop();
+    lilb.stageLoop();
     return 0;
 }

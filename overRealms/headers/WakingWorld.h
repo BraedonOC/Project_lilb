@@ -2,7 +2,10 @@
 #define WAKING_WORLD
 
 #include <SFML/Graphics.hpp>
-#include <time.h>
+#include <math.h>
+#include <chrono>
+#include <vector>
+#include <iostream>
 
 
 class WakingWorld {
@@ -12,10 +15,20 @@ public:
 
 private:
     void mainLoop();
-    void drawWindow();
-    
-    int _windowX = 500;
-    int _windowY = 500;
+    void updateWorld(sf::RenderWindow &window);
+
+    std::vector<std::vector<int>> worldVector;
+
+    int maxSpeed = 15;
+
+    int playerX = 0;
+    int playerY = 250;
+
+    int windowX = 500;
+    int windowY = 500;
+
+    double speedX = 0;
+    double speedY = 0;
 };
 
 
