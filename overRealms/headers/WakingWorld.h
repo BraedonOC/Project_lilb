@@ -18,23 +18,25 @@ public:
 
 private:
     void mainLoop();  // main game loop, gets input and calls update
-    void generate();  // generates terrain
+    void generateObject(Object &newObject);
+    void generateWorld();  // generates terrain
     void updateWorld(sf::RenderWindow &window);  // update world draws world and calls generate
-
     std::vector<Object> worldVector;
 
     int maxSpeed = 15;
 
     int numberOfObjectTypes = 2;
 
-    int playerX = 0;
-    int playerY = 0;
+    int renderDistance = 50;
+
+    Object player;
+    Object speed;
+
+    int wind = 0;
+    int windSpeed = 1;
 
     int windowX = 1000;
     int windowY = 1000;
-
-    double speedX = 0;
-    double speedY = 0;
 
     double maxXReached = 0;
     double minXReached = 0;
